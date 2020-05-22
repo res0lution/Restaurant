@@ -1,39 +1,45 @@
-import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
-import { FaAlignRight } from "react-icons/fa"
+import React from 'react'
+import { Link } from 'gatsby'
+import { FaAlignRight } from 'react-icons/fa'
+import styled from 'styled-components'
 
 import logo from "../../../images/logo.svg"
+import { styles } from '../../../utils'
 
-const NavbarHeader = ({ handleNavbar }) => {
+export default function NavbarHeader({ handleNavbar }) {
   return (
     <HeaderWrapper>
       <Link to="/">
         <img src={logo} alt="company logo" />
       </Link>
 
-      <FaAlignRight className="toggle-icon" onClick={() => handleNavbar()} />
+      <FaAlignRight
+        className="toggle-icon"
+        onClick={() => {
+          handleNavbar()
+        }}
+      />
     </HeaderWrapper>
   )
 }
 
-export default NavbarHeader
-
 const HeaderWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .toggle-icon {
-    color: yellow;
-    cursor: pointer;
     font-size: 1.75rem;
+    color: ${styles.colors.mainYellow};
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
     .toggle-icon {
       display: none;
     }
+    
+    padding: 0.4rem 1rem;
   }
 `

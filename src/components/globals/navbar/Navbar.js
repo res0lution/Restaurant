@@ -1,31 +1,35 @@
-import React, { useState } from "react"
+import React, { Component } from 'react'
 import styled from "styled-components"
 
-import NavbarHeader from "./NavbarHeader"
-import NavbarIcons from "./NavbarIcons"
-import NavbarLinks from "./NavbarLinks"
+import NavbarHeader from './NavbarHeader'
+import NavbarLinks from './NavbarLinks'
+import NavbarIcons from './NavbarIcons'
 
-const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
-
-  const handleNavbar = () => {
-    setNavbarOpen(!navbarOpen)
+export default class Navbar extends Component {
+  state = {
+    navbarOpen: false,
   }
 
-  return (
-    <NavbarWrapper>
-      <NavbarHeader handleNavbar={handleNavbar} />
-      <NavbarLinks navbarOpen={navbarOpen} />
-      <NavbarIcons />
-    </NavbarWrapper>
-  )
+  handleNavbar = () => {
+    this.setState(() => {
+      return { navbarOpen: !this.state.navbarOpen }
+    })
+  }
+  
+  render() {
+    return (
+      <NavWrapper>
+        <NavbarHeader handleNavbar={this.handleNavbar} />
+        <NavbarLinks navbarOpen={this.state.navbarOpen} />
+        <NavbarIcons />
+      </NavWrapper>
+    )
+  }
 }
 
-export default Navbar
-
-const NavbarWrapper = styled.nav`
-  @media(min-width: 768px) {
-    align-items: center;
+const NavWrapper = styled.nav`
+  @media (min-width: 768px) {
     display: flex;
+    align-items: center;
   }
 `
