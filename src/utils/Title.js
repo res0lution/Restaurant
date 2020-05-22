@@ -1,6 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { styles } from '.'
+import React from "react"
+import styled from "styled-components"
+
+import { styles } from "."
+
 export function Title({ title, message }) {
   return (
     <TitleWrapper>
@@ -10,24 +12,28 @@ export function Title({ title, message }) {
     </TitleWrapper>
   )
 }
+
 Title.defaultProps = {
-  message: 'our message',
-  title: 'our title',
+  message: "our message",
+  title: "our title",
 }
 
 const TitleWrapper = styled.div`
   text-align: center;
+
   h3 {
     ${styles.textSlanted};
-    ${styles.letterSpacing({ spacing: '0.3rem' })};
+    ${styles.letterSpacing({ spacing: "0.3rem" })};
     font-size: 2rem;
     color: ${styles.colors.mainYellow};
   }
+
   h1 {
-    ${styles.letterSpacing({ spacing: '0.3rem' })};
+    ${styles.letterSpacing({ spacing: "0.3rem" })};
     font-size: 2rem;
     text-transform: uppercase;
   }
+
   .underline {
     width: 5rem;
     height: 0.2rem;

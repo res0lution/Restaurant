@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import styled from "styled-components"
 
-import NavbarHeader from './NavbarHeader'
-import NavbarLinks from './NavbarLinks'
-import NavbarIcons from './NavbarIcons'
+import NavbarHeader from "./NavbarHeader"
+import NavbarLinks from "./NavbarLinks"
+import NavbarIcons from "./NavbarIcons"
 
 export default class Navbar extends Component {
   state = {
@@ -15,7 +15,7 @@ export default class Navbar extends Component {
       return { navbarOpen: !this.state.navbarOpen }
     })
   }
-  
+
   render() {
     return (
       <NavWrapper>

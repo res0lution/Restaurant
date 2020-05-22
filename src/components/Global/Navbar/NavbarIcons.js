@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa'
-import styled from 'styled-components'
+import React, { Component } from "react"
+import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa"
+import styled from "styled-components"
 
-import { styles } from '../../../utils'
+import { styles } from "../../../utils"
 
 export default class NavbarIcons extends Component {
   state = {
@@ -45,7 +45,7 @@ export default class NavbarIcons extends Component {
 
 const IconWrapper = styled.div`
   .icon {
-    // margin-right: 2rem;
+    margin-right: 2rem;
     font-size: 1.3rem;
     cursor: pointer;
     ${styles.transFunction()};
@@ -68,7 +68,7 @@ const IconWrapper = styled.div`
   }
 
   display: none;
-  
+
   @media (min-width: 768px) {
     width: 10rem;
     display: flex;
